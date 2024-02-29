@@ -38,6 +38,7 @@ ignore = [
 [tool.pylint.messages_control]
 disable = [
   "too-few-public-methods",
+  "fixme",
 ]
 
 [tool.pylint.basic]
