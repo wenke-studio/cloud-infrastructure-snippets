@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "cloud-infrastructure-snippets"
+version = "0.1.0"
+description = ""
+authors = ["wenke.lai <wenke.studio@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+# Infrastracture as Code
+pulumi = "^3.107.0"
+pulumi-aws = "^6.23.0"
+integrator = {git = "https://github.com/wenke-studio/integrator.git"}
+# other
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.22.1"
+# format
+black = "^24.2.0"
+isort = "^5.13.2"
+# lint
+pylint = "^3.0.4"
+mypy = "^1.8.0"
+# test
+pytest = "^8.0.1"
+
+[tool.isort]
+profile = "black"
+known_pulumi = "pulumi,pulumi_aws"
+sections = "FUTURE,STDLIB,PULUMI,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.pylint.main]
+load-plugins = [
+]
+ignore = [
+]
+
+[tool.pylint.messages_control]
+disable = [
+]
+
+[tool.pylint.basic]
+good-names = [
+  "_",
+]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
